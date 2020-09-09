@@ -1,3 +1,7 @@
+const path = require('path');
+require('dotenv').config({
+  path: path.join(__dirname, "../.env")
+});
 const jwt = require('jsonwebtoken');
 
 const signOptions = {
@@ -6,7 +10,7 @@ const signOptions = {
 }
 
 const jwtKey = process.env.JWT_KEY;
-
+console.log(process.env.JWT_KEY)
 exports.getToken = (payload) => {
     const token = jwt.sign(payload, jwtKey, signOptions);
 

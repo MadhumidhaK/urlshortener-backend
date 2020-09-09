@@ -12,16 +12,13 @@ const helmet = require('helmet');
 const cors = require("cors");
 
 const db = require('./config/dbConfig');
-// const base62 = require('./utils/base62');
-// const mailService = require('./utils/nodeMailerService');
-// const jwtService = require('./utils/jwtService');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const userRouter = require("./routes/user");
 const urlRouter = require("./routes/url");
 const { getURL } = require('./controllers/url');
 
-
+console.log(process.env.JWT_KEY)
 var app = express();
 
 app.use(helmet());
