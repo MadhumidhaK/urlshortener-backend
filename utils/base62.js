@@ -1,7 +1,3 @@
-const path = require('path');
-require('dotenv').config({
-  path: path.join(__dirname, "../.env")
-});
 const alphabets = process.env.BASE62_ALPHABETS;
 
 exports.encode = function(num) {
