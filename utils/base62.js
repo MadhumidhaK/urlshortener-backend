@@ -2,8 +2,10 @@ const alphabets = process.env.base62_alphabets;
 
 exports.encode = function(num) {
     let encodedString = "";
-
+    console.log(alphabets);
+    console.log(num);
     while(num > 0){
+        console.log(encodedString)
         encodedString = alphabets[num % 62] + encodedString;
         num = parseInt(num / 62);
     }
