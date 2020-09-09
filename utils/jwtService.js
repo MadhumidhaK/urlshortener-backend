@@ -10,7 +10,7 @@ const signOptions = {
 }
 
 const jwtKey = process.env.JWT_KEY;
-console.log(process.env.JWT_KEY)
+
 exports.getToken = (payload) => {
     const token = jwt.sign(payload, jwtKey, signOptions);
 

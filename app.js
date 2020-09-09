@@ -18,7 +18,6 @@ const userRouter = require("./routes/user");
 const urlRouter = require("./routes/url");
 const { getURL } = require('./controllers/url');
 
-console.log(process.env.JWT_KEY)
 var app = express();
 
 app.use(helmet());
@@ -43,7 +42,6 @@ app.use(function (req, res, next) {
   console.log('Headers has been set');
   next();
 });
-console.log("received a request");
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/url', urlRouter);
