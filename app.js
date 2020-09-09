@@ -1,7 +1,9 @@
-require('dotenv').config();
+var path = require('path');
+require('dotenv').config({
+  path: path.join(__dirname, ".env")
+});
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
 var fs = require('fs');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -64,6 +66,9 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.statusCode || 500);
+  if(err.statusCode === 500){
+    err.message = "Internal Server Error. Please try again later.";
+  }
   res.send({
     error: err.message || "Internal Server Error",
     data: err.data ? err.data : null
