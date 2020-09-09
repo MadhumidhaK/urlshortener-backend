@@ -1,4 +1,4 @@
-const alphabets = process.env.base62_alphabets;
+const alphabets = process.env.BASE62_ALPHABETS;
 
 exports.encode = function(num) {
     let encodedString = "";

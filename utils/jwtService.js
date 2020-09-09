@@ -5,7 +5,7 @@ const signOptions = {
     expiresIn: "12h"
 }
 
-const jwtKey = process.env.jwt_key;
+const jwtKey = process.env.JWT_KEY;
 
 exports.getToken = (payload) => {
     const token = jwt.sign(payload, jwtKey, signOptions);
