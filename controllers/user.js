@@ -153,7 +153,7 @@ exports.requestEmailVerification = [
 
 const sendVerificationMail = async (email, token, name) => {
     const verificationEmail = {
-        from: '"URL Shortener" <noreply@minyurl.com>',
+        from: '"MinyURL" <noreply@minyurl.com>',
         to: email,
         subject: 'Welcome, Please verify your email!',
         html: `
@@ -325,7 +325,7 @@ exports.forgotPassword = [
             user.resetTokenExpiration = Date.now() + 3600000
             await user.save();
             const resetEmail = {
-                from: '"URL Shortener" <noreply@minyurl.com>',
+                from: '"MinyURL" <noreply@minyurl.com>',
                 to: email,
                 subject: 'Reset Your Password',
                 html: `
