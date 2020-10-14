@@ -44,7 +44,7 @@ exports.createShortUrl = [
                 const url = new URL({
                     longUrl: longUrl,
                     shortUrl: shortUrlId,
-                    name: req.name,
+                    name: req.body.name,
                     user: user._id
                 });
 
